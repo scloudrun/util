@@ -6,7 +6,10 @@
 
 package util
 
-import "time"
+import (
+	"strconv"
+	"time"
+)
 
 var (
 	DefaultDateFormat     = "2006-01-02"
@@ -15,6 +18,14 @@ var (
 
 func TimestampMS() int64 {
 	return time.Now().UnixNano() / int64(time.Millisecond)
+}
+
+func Timestamp() int64 {
+	return time.Now().Unix()
+}
+
+func TimestampString() string {
+	return strconv.FormatInt(Timestamp(), 10)
 }
 
 func DatetimeString() string {
