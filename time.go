@@ -53,3 +53,11 @@ func ToDate(t time.Time) time.Time {
 	t, _ = time.Parse(DefaultDateFormat, DateFormat(t))
 	return t
 }
+
+func LastDay() string {
+	return time.Now().AddDate(0, 0, -1).Format("20060102")
+}
+
+func LastMonth() string {
+	return time.Now().AddDate(0, -1, 0).Format("20060102")
+}
